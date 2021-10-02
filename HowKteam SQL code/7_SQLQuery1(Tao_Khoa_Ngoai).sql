@@ -23,15 +23,15 @@ GO
 --xóa bảng
 --DROP TABLE dbo.GiaoVien
 
---đặt tên key để xóa cho dễ
-ALTER TABLE dbo.GiaoVien ADD BoMon CHAR(10)
-ALTER TABLE dbo.GiaoVien ADD CONSTRAINT FK_BM FOREIGN KEY(BoMon) REFERENCES dbo.BoMon(MaBM)
-
 CREATE TABLE BoMon
 (	MaBM CHAR(10) PRIMARY KEY,
 	TenBM NVARCHAR(15) DEFAULT N'Tên bộ môn'
 	)
 GO
+
+--đặt tên key để xóa cho dễ
+ALTER TABLE dbo.GiaoVien ADD BoMon CHAR(10)
+ALTER TABLE dbo.GiaoVien ADD CONSTRAINT FK_BM FOREIGN KEY(BoMon) REFERENCES dbo.BoMon(MaBM)
 
 CREATE TABLE Lop
 (	MaLop CHAR(5) NOT NULL ,
